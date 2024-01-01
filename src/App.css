@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+  --color-gray-light: hsl(0, 0%, 97%);
+  --color-gray-dark: hsl(0, 0%, 45%);
+  --color-red: hsl(8, 82%, 51%);
+  --color-red-dark: hsl(8, 82%, 41%);
+  --color-red-darker: hsl(8, 82%, 31%);
+  --color-red-light: hsl(8, 82%, 71%);
+
+  --color-primary: var(--color-red);
+  --color-primary-light: var(--color-red-light);
+}
+
+:root {
+  --medium-elevation-shadow: 0 2px 5px hsl(0, 0%, 0%, 20%);
+  --low-elevation-shadow: 0 2px 2px hsl(0, 0%, 0%, 20%);
+}
+
+@keyframes appear-from-below {
+  from {
+    opacity: 0;
+    translate: 0 100px;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+@keyframes appear-from-left {
+  from {
+    opacity: 0;
+    translate: -100px 0;
+  }
+
+  to {
+    opacity: 1;
+    translate: 0;
+  }
+}
+
+
+:root {
+  font-size: clamp(14px, 2vw, 18px)
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body,
+button {
+  font-family: 'noto sans', 'sans-serif';
+}
+
+body {
+  background: var(--color-gray-light);
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: capitalize;
+}
+
+.app-header {
+  background: var(--color-primary);
+  padding: 1rem 0;
+  box-shadow: var(--low-elevation-shadow);
+}
+
+.app-container {
+  margin-inline: auto;
+  width: min(90%, 600px);
+}
+
+.button {
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.button-primary {
+  background: var(--color-primary);
+  box-shadow: var(--low-elevation-shadow);
+  color: white;
+  transition: background 200ms;
+}
+
+.button-primary[data-variant='dark'] {
+  border: 1px solid white;
+}
+
+.button-primary:hover {
+  background: var(--color-red-dark);
+}
+
+.button-primary:active {
+  background: var(--color-red-darker);
+}
+
+.button-primary:disabled {
+  background: var(--color-primary-light);
+  cursor: not-allowed;
+}
+
+input[type='text'] {
+  background: transparent;
+  border-radius: 10px 10px 0 0;
+  border: none;
+  border-bottom: 1px solid white;
+  display: block;
+  font-size: 0.9rem;
+  padding: 0.5rem;
+  transition: border 100ms, background 200ms;
+  width: 100%;
+}
+
+input[type='text']::placeholder {
+  color: white;
+  opacity: 1;
+}
+
+input[type='text']:focus {
+  outline: none;
+}
+
+input[type='text']:focus::placeholder {
+  color: black;
+}
+
+input[type='text']:focus,
+input[type='text']:not(:placeholder-shown) {
+  background: white;
+  border-bottom: none;
+}
+
+.todo-form {
+  display: flex;
+  gap: 1rem;
+}
+
+.todo-form input[type='text'] {
+  animation: appear-from-below 1s forwards;
+  opacity: 0;
+}
+
+.todo-form button {
+  animation: appear-from-below 1s 200ms forwards;
+  opacity: 0;
+}
+
+.todos-list-title {
+  animation: appear-from-below 1s 400ms forwards;
+  font-size: 1.5rem;
+  opacity: 0;
+  margin: 3rem 0 0.2rem 0;
+}
+
+.todos-status p {
+  animation: appear-from-left 1s forwards;
+  color: var(--color-gray-dark);
+  margin: 0;
+}
+
+.todos-container {
+  display: grid;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.todos-congrats-message {
+  align-items: center;
+  color: var(--color-gray-dark);
+  display: flex;
+  flex-direction: column;
+}
+
+.todos-congrats-message-icon {
+  animation: appear-from-below 1s 600ms forwards;
+  font-size: 3rem;
+  opacity: 0;
+}
+
+.todos-congrats-message-text {
+  animation: appear-from-below 1s 800ms forwards;
+  opacity: 0;
+}
+
+.todo {
+  --transition-duration: 200ms;
+  align-items: center;
+  animation: appear-from-below 1s forwards;
+  background: white;
+  border-radius: 5px;
+  box-shadow: var(--low-elevation-shadow);
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  border-left: 0px solid var(--color-primary);
+  transition:
+    box-shadow var(--transition-duration),
+    border-left var(--transition-duration),
+    background var(--transition-duration);
+}
+
+.todo:hover,
+.todo:active {
+  box-shadow: var(--medium-elevation-shadow);
+  border-left: 5px solid var(--color-primary);
+  border-radius: 0 10px 10px 0;
+  background: hsl(0, 0%, 100%, 50%);
+  backdrop-filter: blur(5px);
+}
+
+.todo-body {
+  margin: 0 0 0.5rem 0;
+  text-transform: capitalize;
+}
+
+.todo-time {
+  color: var(--color-gray-dark);
+  font-size: 0.9rem;
+}
+
