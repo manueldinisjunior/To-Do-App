@@ -12,7 +12,7 @@ This project is a simple yet effective To-Do List web application built using HT
 # Usage
 
 To start using the To-Do List web app, simply open the index.html file in your preferred web browser. No additional installations or configurations are necessary.
-Contributions
+Contributions.
 
 Contributions, bug fixes, and improvements are highly welcome! If you have any suggestions or would like to enhance the project, please feel free to open an issue or submit a pull request.
 
@@ -28,6 +28,6 @@ This project draws inspiration from various to-do list applications and design p
 
 To get a glimpse of the To-Do List web app, refer to the following screenshot:
 
-To-Do List Web App Preview
+To-Do List Web App Preview.
 
 We hope this web app simplifies your task management and organization process. Please explore the app, provide feedback, and feel free to suggest any improvements.
