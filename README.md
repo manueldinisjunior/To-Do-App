@@ -1,5 +1,5 @@
 # To-Do List Web App
-
+ 
 This project is a simple yet effective To-Do List web application built using HTML, CSS, and JavaScript. This project aimed to provide a straightforward and intuitive interface for managing tasks and staying organized.
 
 # Features
